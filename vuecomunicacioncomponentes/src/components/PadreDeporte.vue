@@ -5,7 +5,6 @@
         </h1>
         <h2 style="color: blue;" v-if="favorito">Su deporte fav es: {{ favorito }}</h2>
         <ul v-for="sport in deportes" :key="sport">
- 
             <HijoDeporte :nombredeporte="sport"
             v-on:seleccionarFavoritoParent="seleccionarFavoritoParent"/>
         </ul>

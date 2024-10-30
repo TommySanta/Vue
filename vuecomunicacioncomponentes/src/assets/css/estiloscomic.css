@@ -1,0 +1,13 @@
+.rojo {
+    color: rebeccapurple;
+}
+
+.verde{
+    background-color: lightgreen;
+}
+img{
+    width: 150px;
+}
+div#comics {
+    float: left;
+}

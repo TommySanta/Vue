@@ -1,22 +1,26 @@
 <template>
   <div>
-    <PadreNumeros/>
+    <MenuComponent/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import PadreNumeros from './components/PadreNumeros .vue';
+import MenuComponent from './components/MenuComponent.vue';
+
+
 
 
 export default {
   name: 'App',
   components: {
-    PadreNumeros
+    MenuComponent
   }
 }
 </script>
 
 <style>
+    
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

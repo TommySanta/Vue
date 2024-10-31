@@ -1,10 +1,13 @@
 <template>
     <div>
         <ul id="menu">
-            <li><router-link to="/">Home</router-link> |</li>
-            <li><router-link to="/deportes">Deportes</router-link> |</li>
-            <li v-for="(numero, index) in numeros" :key="index">
-                <router-link :to="`/tabla/${numero}`">Tabla de {{ numero }}</router-link> |
+            <li>
+                <router-link to="/">Home</router-link> |
+            </li>
+            <li v-for="num in numeros" :key="num">
+                <router-link :to="'/tablamultiplicar/' + num">
+                    Tabla {{ num }} |
+                </router-link>
             </li>
         </ul>
     </div>
@@ -15,24 +18,20 @@ export default {
     name: "MenuTablaMultiplicar",
     data() {
         return {
-            numeros: [] 
+            numeros: []
         };
     },
     mounted() {
-        for (let i = 0; i < 5; i++) { 
-            const numeroAleatorio = Math.floor(Math.random() * 100) + 1;
-            this.numeros.push(numeroAleatorio);
+        for (let i = 1; i <= 5; i++) { 
+            let random = Math.floor(Math.random() * 100) + 1;
+            this.numeros.push(random);
         }
     }
 };
 </script>
 
 <style>
-ul#menu {
-    list-style: none;
-}
-
-li {
+ul#menu li {
     display: inline;
 }
 </style>

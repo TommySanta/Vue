@@ -9,8 +9,9 @@
     </div>
 </template>
 <script>
-import axios from 'axios';
-import Global from './Global';
+import ServiceCoches from './ServiceCoches';
+
+const service= new ServiceCoches();
 export default {
     name: "CochesComponent",
     data ()
@@ -21,13 +22,10 @@ export default {
     },
     mounted()
     {
-        let request = "webresources/coches";
-        //Las variables declaradas por encima de export default no utilizan la palabra this
-        let url = Global.urlApiCoches + request;
-        axios.get(url).then(Response => {
-            console.log("Leyendo servicio");
-            this.coches = Response.data;
+        service.getCoches.then(result =>{
+            this.coches= result;
         })
+        
     }
 }
 </script>
